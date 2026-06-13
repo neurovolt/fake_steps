@@ -80,9 +80,7 @@ class MainActivity : AppCompatActivity() {
                     endTime = now.toInstant(),
                     startZoneOffset = now.offset,
                     endZoneOffset = now.offset,
-                    metadata = HealthMetadata(
-                        recordingMethod = HealthMetadata.RECORDING_METHOD_MANUALLY_ENTERED
-                    )
+                    metadata = HealthMetadata.manualEntry()
                 )
                 healthConnectClient.insertRecords(listOf(record))
                 runOnUiThread { showToast("$steps steps inject ho gaye!") }
