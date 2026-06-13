@@ -19,6 +19,7 @@ jobs:
     - name: Generate Wrapper
       run: |
         cd /tmp && mkdir w && cd w
+        echo "" > settings.gradle
         gradle wrapper --gradle-version 8.7
         cp gradlew $GITHUB_WORKSPACE/
         mkdir -p $GITHUB_WORKSPACE/gradle/wrapper
