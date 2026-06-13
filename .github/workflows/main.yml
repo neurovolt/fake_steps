@@ -15,12 +15,12 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
       with:
-        gradle-version: '8.7'
+        gradle-version: '8.11.1'
     - name: Generate Wrapper
       run: |
         cd /tmp && mkdir w && cd w
         echo "" > settings.gradle
-        gradle wrapper --gradle-version 8.7
+        gradle wrapper --gradle-version 8.11.1
         cp gradlew $GITHUB_WORKSPACE/
         mkdir -p $GITHUB_WORKSPACE/gradle/wrapper
         cp gradle/wrapper/* $GITHUB_WORKSPACE/gradle/wrapper/
