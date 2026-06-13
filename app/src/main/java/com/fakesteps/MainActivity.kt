@@ -9,7 +9,7 @@ import androidx.health.connect.client.HealthConnectClient
 import androidx.health.connect.client.PermissionController
 import androidx.health.connect.client.permission.HealthPermission
 import androidx.health.connect.client.records.StepsRecord
-import androidx.health.connect.client.records.metadata.Metadata
+import androidx.health.connect.client.records.metadata.Metadata as HealthMetadata
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                     endTime = now.toInstant(),
                     startZoneOffset = now.offset,
                     endZoneOffset = now.offset,
-                    metadata = Metadata()
+                    metadata = HealthMetadata()
                 )
                 healthConnectClient.insertRecords(listOf(record))
                 runOnUiThread { showToast("$steps steps inject ho gaye!") }
